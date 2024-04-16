@@ -404,6 +404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sectionsPrefab:
   - {fileID: 4952998085689079012, guid: b862ba24ba26bf74d95bc096ba9ee37c, type: 3}
+  - {fileID: 1647300417641490272, guid: 899e2bb4ee8227e4a89dc82748d5f475, type: 3}
+  sectionLength: 30
 --- !u!1 &1595601272
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1595601275}
+  accelerationMultiplier: 3
+  breaksMultiplier: 15
+  steeringMultiplier: 5
 --- !u!54 &1595601275
 Rigidbody:
   m_ObjectHideFlags: 0

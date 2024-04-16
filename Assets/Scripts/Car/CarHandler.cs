@@ -7,9 +7,9 @@ public class CarHandler : MonoBehaviour
     [SerializeField]
     Rigidbody rb;
 
-    float accelerationMultiplier = 3;
-    float breaksMultiplier = 15;
-    float steeringMultiplier = 5;
+    public float accelerationMultiplier = 3;
+    public float breaksMultiplier = 15;
+    public float steeringMultiplier = 5;
 
     Vector2 input = Vector2.zero;
 
@@ -57,15 +57,7 @@ public class CarHandler : MonoBehaviour
 
         rb.AddForce(rb.transform.forward * breaksMultiplier * input.y);
     }
-
-    void Steer()
-    {
-        if (Mathf.Abs(input.x) < 0)
-        {
-            rb.AddForce(rb.transform.right * steeringMultiplier * input.x);
-        }
-    }
-
+    
     public void SetInput(Vector2 inputVector)
     {
         inputVector.Normalize();

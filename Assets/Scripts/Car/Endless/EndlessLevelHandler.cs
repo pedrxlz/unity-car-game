@@ -15,7 +15,7 @@ public class EndlessLevelHandler : MonoBehaviour
 
     WaitForSeconds waitFor100ms = new WaitForSeconds(0.1f);
 
-    const float sectionLength = 26;
+    public float sectionLength = 26;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +40,8 @@ public class EndlessLevelHandler : MonoBehaviour
         for (int i = 0; i < sections.Length; i++)
         {
             sections[i] = Instantiate(sectionsPool[Random.Range(0, sectionsPool.Length)]);
+            sections[i].transform.position = new Vector3(sectionsPool[i].transform.position.x, 0, i * sectionLength);
             sections[i].SetActive(true);
-            sections[i].transform.position = new Vector3(0, i * sectionLength, 0);
             
         }
 
