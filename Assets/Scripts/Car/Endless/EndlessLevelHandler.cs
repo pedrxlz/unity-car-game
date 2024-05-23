@@ -15,9 +15,8 @@ public class EndlessLevelHandler : MonoBehaviour
 
     WaitForSeconds waitFor100ms = new WaitForSeconds(0.1f);
 
-    public float sectionLength = 26;
+    public float sectionLength;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerCarTransform = GameObject.FindGameObjectWithTag("Player").transform;

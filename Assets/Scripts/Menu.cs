@@ -6,7 +6,7 @@ public class Menu : MonoBehaviour
 {
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Endless Section Builing PF Variant");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 
     public void QuitGame()
