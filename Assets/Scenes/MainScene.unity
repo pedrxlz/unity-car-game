@@ -402,7 +402,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectionsPrefab:
-  - {fileID: 4952998085689079012, guid: b862ba24ba26bf74d95bc096ba9ee37c, type: 3}
+  - {fileID: 4952998085689079012, guid: a78f40031b5e7594e9bb075e37902cc8, type: 3}
+  - {fileID: 4952998085689079012, guid: 7ab57a369c82a5c4fb4caf07b99052c9, type: 3}
+  - {fileID: 4952998085689079012, guid: bc503b5839266ae4683043c3ebb546d7, type: 3}
+  - {fileID: 4952998085689079012, guid: b6e81aad1a691c64aa50bcac777d96e6, type: 3}
+  - {fileID: 1647300417641490272, guid: 899e2bb4ee8227e4a89dc82748d5f475, type: 3}
   sectionLength: 40
 --- !u!1 &1595601272
 GameObject:
