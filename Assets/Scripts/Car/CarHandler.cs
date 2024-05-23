@@ -5,63 +5,61 @@ using UnityEngine;
 public class CarHandler : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody rb;
+    private Rigidbody rb;
 
     public float accelerationMultiplier = 3;
     public float breaksMultiplier = 15;
-    public float steeringMultiplier = 5;
+    public float steeringSensitivity = 0.5f; // Sensibilidade da direção
 
-    Vector2 input = Vector2.zero;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Vector2 input = Vector2.zero;
 
     private void FixedUpdate()
     {
+        // Controle de aceleração e frenagem
         if (input.y > 0)
         {
             Accelerate();
         }
-        else 
-        {
-            rb.drag = 0.2f;
-        }
-
-        if ( input.y < 0)
+        else if (input.y < 0)
         {
             Brake();
+        }
+        else
+        {
+            rb.drag = 0.2f; // Aplica um pouco de arrasto quando não há entrada de aceleração ou frenagem
+        }
+
+        // Aplica direção modificando a direção do vetor de velocidade
+        if (input.x != 0)
+        {
+            Steer(input.x);
         }
     }
 
     void Accelerate()
     {
-        rb.drag = 0;
-        rb.AddForce(transform.forward * accelerationMultiplier * input.y);
+        rb.drag = 0; // Remove o arrasto durante a aceleração
+        rb.AddForce(transform.forward * accelerationMultiplier * input.y, ForceMode.Acceleration);
     }
 
     void Brake()
     {
-        if (rb.velocity.z <= 0)
+        // A frenagem é aplicada apenas se o carro estiver se movendo para a frente
+        if (rb.velocity.magnitude > 0)
         {
-            return;
+            rb.AddForce(-transform.forward * breaksMultiplier * Mathf.Abs(input.y), ForceMode.Acceleration);
         }
-
-        rb.AddForce(rb.transform.forward * breaksMultiplier * input.y);
     }
-    
+
+    void Steer(float direction)
+    {
+        // Modifica a direção do vetor de velocidade para simular a direção
+        Vector3 directionVector = Quaternion.Euler(0, direction * steeringSensitivity, 0) * rb.velocity;
+        rb.velocity = directionVector;
+    }
+
     public void SetInput(Vector2 inputVector)
     {
-        inputVector.Normalize();
-
-        input = inputVector;
+        input = inputVector; // Atualiza o vetor de entrada diretamente
     }
 }
