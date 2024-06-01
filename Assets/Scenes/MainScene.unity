@@ -697,8 +697,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sectionsPrefab:
-  - {fileID: 8464416015165772756, guid: 90640fc6f12b99a4fa51a96e87b90a8f, type: 3}
   - {fileID: 8464416015165772756, guid: 14452f7857e1d0d4986823f8e7c6c0dd, type: 3}
+  - {fileID: 8464416015165772756, guid: c70fe50eca637a74a867279d5b1a3ee0, type: 3}
+  - {fileID: 8464416015165772756, guid: 90640fc6f12b99a4fa51a96e87b90a8f, type: 3}
   sectionLength: 40
 --- !u!1 &1595601272
 GameObject:
