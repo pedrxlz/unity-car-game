@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DialogueEditor;
 
 public class CarHandler : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody rb;
+    [SerializeField] private Rigidbody rb;
+
+    [SerializeField] private NPCConversation myConversation;
 
     public float accelerationMultiplier = 3;
     public float breaksMultiplier = 15;
     public float steeringSensitivity = 0.5f; // Sensibilidade da direção
 
     private Vector2 input = Vector2.zero;
+
+    private void Start()
+    {
+        ConversationManager.Instance.StartConversation(myConversation);
+    }
 
     private void FixedUpdate()
     {
