@@ -11,7 +11,6 @@ public class Menu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Desisto!");
         Application.Quit();
     }
 }

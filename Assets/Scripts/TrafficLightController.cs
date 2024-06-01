@@ -47,7 +47,6 @@ public class TrafficLightController : MonoBehaviour
         Material[] materials = trafficLight.GetComponent<Renderer>().materials;
 
         currentState = state;
-        // Turn off all lights
         materials[1] = null;
         materials[2] = null;
         materials[3] = null;
